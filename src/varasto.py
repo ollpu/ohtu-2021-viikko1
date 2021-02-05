@@ -8,7 +8,7 @@ class Varasto:
         
         if alku_saldo < 0.0:
             # virheellinen, nollataan
-            self.saldo = -1
+            self.saldo = 0.0
         elif alku_saldo <= tilavuus:
             # mahtuu
             self.saldo = alku_saldo
@@ -31,7 +31,7 @@ class Varasto:
     def ota_varastosta(self, maara):
         if maara < 0:
             return 0.0
-        if maara > self.saldo:
+        if maara > self.saldo: 
             kaikki_mita_voidaan = self.saldo
             self.saldo = 0.0
 
